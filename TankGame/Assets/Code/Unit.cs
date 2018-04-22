@@ -102,7 +102,14 @@ namespace TankGame
 		protected virtual void HandleUnitDied( Unit unit )
 		{
 			GameManager.Instance.MessageBus.Publish( new UnitDiedMessage( this ) );
-			gameObject.SetActive( false );
+            gameObject.SetActive( false );
+
+            //TODO: Unit Respawning here
+            // if (numberOfCurrentLife < maxLives)
+            //          Reset health, position, updateUI.
+            // else
+            //          Enemies win!
+            
 		}
 
 		public virtual UnitData GetUnitData()
